@@ -24,7 +24,29 @@ This project is my way of making data tasks simpler and more automated. 🤖 Exc
 
 # 4. Docker
 
-**The docker-comppose.yaml file sets up an environment for an ELT (Extract, Load, Transform) pipeline using PostgreSQL databases and Apache Airflow for workflow orchestration**
+```
+Docker allows us to package our application and its dependencies into a single, portable container. This means that we can run our ELT pipeline consistently on any system that supports Docker, eliminating the "it works on my machine" problem. Using Docker Compose, we can define and manage multiple interdependent services with ease.
+```
+
+![image](https://github.com/hari255/Data-Engineering/assets/59302293/5330b3d5-9d51-4356-a4de-31e1fd5d1317)
+
+
+## PostgreSQL Containers
+
+We use separate PostgreSQL containers for the source and destination databases. This separation allows us to simulate a real-world data pipeline where data is extracted from a source system, transformed, and loaded into a destination system.
+
+## Apache Airflow
+
+Apache Airflow is deployed to manage and orchestrate the data workflows. We use Docker to run the Airflow webserver and scheduler, ensuring that all dependencies and configurations are handled automatically.
+
+## Docker Compose
+Docker Compose is used to define and run multi-container Docker applications. In our docker-compose.yaml file, we define the services required for our ELT pipeline, including the databases and Airflow components. Docker Compose simplifies the process of setting up and managing these services.
+
+
+
+**The docker-comppose.yaml file sets up an environment for an ELT (Extract, Load, Transform) pipeline using PostgreSQL databases and Apache Airflow for workflow orchestration, it is like a backbone of the whole setup**
+
+Here's the break down of docker-compose file.
 
 ## Services
 
@@ -66,6 +88,8 @@ This project is my way of making data tasks simpler and more automated. 🤖 Exc
 
 
 
+
+---
 
 
 **References**
