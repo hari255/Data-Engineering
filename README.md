@@ -26,38 +26,43 @@ This project is my way of making data tasks simpler and more automated. 🤖 Exc
 
 **The docker-comppose.yaml file sets up an environment for an ELT (Extract, Load, Transform) pipeline using PostgreSQL databases and Apache Airflow for workflow orchestration**
 
-## 1. Services
+## Services
 
-### source_postgres:
+### 1. source_postgres:
 
  + Runs a PostgreSQL container as the source database.
  + Initializes the database with an SQL script.
 
-### destination_postgres:
+### 2. destination_postgres:
 
  + Runs a PostgreSQL container as the destination database.
 
-### postgres:
+### 3. postgres:
 
- +Runs a PostgreSQL container to store Airflow's metadata.
-init-airflow:
+ + Runs a PostgreSQL container to store Airflow's metadata.
+ 
+### 4. init-airflow:
 
-Initializes the Airflow database and creates an admin user.
-Ensures that the postgres service is ready before starting.
-webserver:
+ + Initializes the Airflow database and creates an admin user.
+ + Ensures that the postgres service is ready before starting.
 
-Runs the Airflow webserver.
-Connects to the necessary networks and mounts volumes for configurations and DAGs.
-scheduler:
+### 5. webserver:
 
-Runs the Airflow scheduler.
-Connects to the necessary networks and mounts volumes for configurations and DAGs.
-Networks
+ + Runs the Airflow webserver.
+ + Connects to the necessary networks and mounts volumes for configurations and DAGs.
 
-elt_network: A custom Docker network that allows all services to communicate with each other.
-Volumes
+### 5. scheduler:
 
-destination_db_data: Volume to persist data for the destination PostgreSQL database.
+ + Runs the Airflow scheduler.
+ + Connects to the necessary networks and mounts volumes for configurations and DAGs.
+   
+## Networks
+
+***elt_network**: A custom Docker network that allows all services to communicate with each other.
+
+## Volumes
+
+**destination_db_data**: Volume to persist data for the destination PostgreSQL database.
 
 
 
