@@ -21,7 +21,7 @@ _Apache Airflow is an open-source platform designed to programmatically author, 
 # 3. Data Build Tools (DBT)
 In the background, the dbt project (custom_postgres) is carefully set up in dbt_project.yml. It tells dbt where to find models, analyses, tests, etc. Also, it defines how the example model should appear—like shaping raw data into a neat table. 📊
 
-This project is my way of making data tasks simpler and more automated. 🤖 Excited about the potential impact! Stay tuned for more updates. 👨‍💻 #DataAutomation #DataEngineering #dbt #Airflow #TechJourney 
+
 
 # 4. Docker
 
